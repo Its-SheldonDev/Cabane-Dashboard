@@ -28,7 +28,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permettre de passer à une nouvelle ligne si nécessaire */
+    flex-wrap: wrap; /* Permettre le wrap pour les petits écrans */
 }
 
 nav ul li {
@@ -45,6 +45,7 @@ nav ul li.logo img {
 
 nav ul li.right {
     display: flex;
+    flex-direction: row; /* Aligner les éléments horizontalement par défaut */
     align-items: center;
     margin-left: auto;
     padding-right: 20px; /* Ajouter du padding à droite */
@@ -71,21 +72,31 @@ nav ul li.right a {
 
 /* Styles responsives */
 @media (max-width: 768px) {
-    header {
-        padding: 1em; /* Réduire le padding pour les petits écrans */
-    }
-
     nav ul {
         flex-direction: column; /* Disposer les éléments en colonne sur petits écrans */
+        align-items: center; /* Centrer les éléments */
+    }
+
+    nav ul li.logo {
+        align-self: center; /* Centrer le logo */
     }
 
     nav ul li.right {
-        flex-direction: column;
+        flex-direction: row; /* Aligner les éléments en colonne */
+        align-items: center; /* Centrer les éléments */
         padding-right: 0; /* Enlever le padding à droite */
+        width: 100%; /* Prendre toute la largeur */
     }
 
     nav ul li.right a {
         margin-left: 0; /* Enlever l'espacement entre les éléments de droite */
         margin-bottom: 10px; /* Ajouter un espacement en bas pour séparer les éléments */
+        width: 100%; /* Prendre toute la largeur */
+        text-align: center; /* Centrer le texte */
+        margin-top: 20px; /* Ajouter de l'espace au-dessus des boutons */
+    }
+
+    header {
+        padding: 1em; /* Réduire le padding pour les petits écrans */
     }
 }

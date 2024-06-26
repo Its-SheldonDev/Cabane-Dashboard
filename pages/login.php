@@ -10,12 +10,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($response['message']) && $response['message'] == 'Login successful') {
         $_SESSION['user'] = $username;
-        echo "<script>$(document).ready(function() { toastr.success('Login successful', 'Success'); });</script>";
-        header('refresh:2;url=stats.php');
-        exit();
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Connexion réussie',
+                    text: 'Vous allez être redirigé vers la page des statistiques.',
+                    timer: 3000,
+                    showConfirmButton: false,
+                    didClose: () => {
+                        window.location.href = 'stats.php';
+                    }
+                });
+            });
+        </script>";
     } else {
         $error = $response['message'] ?? 'An error occurred';
-        echo "<script>$(document).ready(function() { toastr.error('$error', 'Error'); });</script>";
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: '$error',
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+            });
+        </script>";
     }
 }
 ?>
@@ -26,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion | QR Cabane</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
     <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 <body>
     <div class="content">
