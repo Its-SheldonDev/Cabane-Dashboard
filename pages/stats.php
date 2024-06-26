@@ -5,32 +5,63 @@ redirectIfNotLoggedIn();
 
 $response = callApi('/scans');
 
-$totalScansToday = $response['totalScansToday'] ?? 0;
-$scans = $response['scans'] ?? [];
+// Filtrer les scans pour n'afficher que ceux de la journée
+$scans = array_filter($response['scans'], function($scan) {
+    $scanDate = new DateTime($scan['date']);
+    $today = new DateTime();
+    return $scanDate->format('Y-m-d') === $today->format('Y-m-d');
+});
+
+$totalScansToday = count($scans);
+
+function formatDateTime($dateStr) {
+    $date = new DateTime($dateStr);
+    return $date->format('d/m/Y') . ' à ' . $date->format('H\hi');
+}
 ?>
-<div class="stats-container">
-    <h2>Statistics</h2>
-    <p>Total Scans Today: <?php echo $totalScansToday; ?></p>
-    <table>
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>User-Agent</th>
-                <th>First Scan</th>
-                <th>Scan Count</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics | QR Cabane</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/stats.css">
+</head>
+<body>
+    <div class="stats-container">
+        <h2>Statistiques</h2>
+        <p>Total des scans aujourd'hui : <?php echo $totalScansToday; ?></p>
+        <div class="cards">
             <?php foreach ($scans as $scan): ?>
-                <tr>
-                    <td><?php echo $scan['ip']; ?></td>
-                    <td><?php echo $scan['userAgent']; ?></td>
-                    <td><?php echo $scan['firstScan'] ? 'Yes' : 'No'; ?></td>
-                    <td><?php echo $scan['scanCount']; ?></td>
-                    <td><?php echo $scan['date']; ?></td>
-                </tr>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Détails du scan</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-group">
+                            <div>
+                                <strong>IP</strong>
+                                <span><?php echo $scan['ip']; ?></span>
+                            </div>
+                            <div>
+                                <strong>Premier Scan</strong>
+                                <span><?php echo $scan['firstScan'] ? 'Yes' : 'No'; ?></span>
+                            </div>
+                        </div>
+                        <div class="info-group">
+                            <div>
+                                <strong>Scans</strong>
+                                <span><?php echo $scan['scanCount']; ?></span>
+                            </div>
+                            <div>
+                                <strong>Date</strong>
+                                <span><?php echo formatDateTime($scan['date']); ?></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+        </div>
+    </div>
+</body>
+</html>

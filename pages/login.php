@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label>Mot de passe</label>
                 </div>
                 <button type="submit">
-                    <img src="../assets/img/check.svg" alt="login icon" />
+                    <img src="../assets/img/svg/login.svg" alt="login icon" />
                     Se Connecter
                 </button>
                 <div class="register">

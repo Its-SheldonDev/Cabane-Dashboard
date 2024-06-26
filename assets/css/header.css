@@ -28,6 +28,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Permettre de passer à une nouvelle ligne si nécessaire */
 }
 
 nav ul li {
@@ -57,16 +58,34 @@ nav ul li a {
     font-size: 1.2em; /* Taille du texte ajustée pour correspondre au logo */
 }
 
-nav ul li a i {
-    font-size: 1.5em; /* Taille des icônes ajustée */
+nav ul li a img.icon {
+    width: 24px;
+    height: 24px;
     margin-right: 15px; /* Espacement entre l'icône et le texte */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%); /* Appliquer une couleur blanche à l'icône */
 }
 
 nav ul li.right a {
     margin-left: 40px; /* Espacement entre les éléments de droite augmenté */
 }
 
-.container {
-    padding: 20px;
-    text-align: center;
+/* Styles responsives */
+@media (max-width: 768px) {
+    header {
+        padding: 1em; /* Réduire le padding pour les petits écrans */
+    }
+
+    nav ul {
+        flex-direction: column; /* Disposer les éléments en colonne sur petits écrans */
+    }
+
+    nav ul li.right {
+        flex-direction: column;
+        padding-right: 0; /* Enlever le padding à droite */
+    }
+
+    nav ul li.right a {
+        margin-left: 0; /* Enlever l'espacement entre les éléments de droite */
+        margin-bottom: 10px; /* Ajouter un espacement en bas pour séparer les éléments */
+    }
 }

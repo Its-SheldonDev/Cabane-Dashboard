@@ -1,0 +1,102 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #12141c;
+    color: white;
+    margin: 0;
+    padding-top: 90px; /* Espace pour éviter de chevaucher la navbar fixe */
+    overflow: auto;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.stats-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+.stats-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.card {
+    background-color: #1c1e29;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le contenu horizontalement */
+    color: #ffffff;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    width: 100%;
+    margin-bottom: 20px; /* Augmenter l'espacement sous le titre */
+    border-bottom: 1px solid #ccc; /* Ajouter une bordure sous le titre */
+    padding-bottom: 10px; /* Ajouter un padding sous le titre */
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+}
+
+.card-content {
+    width: 100%;
+}
+
+.info-group {
+    background-color: #2a2d38; /* Légère variation de fond pour les sections */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 90%; /* Largeur maximale pour la section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le contenu des sections */
+}
+
+.info-group div {
+    width: 100%;
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 10px; /* Espacement entre les éléments */
+}
+
+.info-group div strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #4e91d3; /* Couleur dorée pour les labels */
+}
+
+.info-group div span {
+    display: block;
+    font-size: 1rem;
+    color: #bbb; /* Couleur gris clair pour les valeurs */
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
