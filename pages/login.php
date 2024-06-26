@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Connexion | QR Cabane</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/login.css">
     <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
@@ -36,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="content">
         <div class="wrapper">
             <form method="post">
-                <h2>Login</h2>
+                <h2>Connexion</h2>
                 <div class="input-field">
                     <input type="text" name="username" required>
                     <label>Utilisateur</label>
@@ -45,7 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" name="password" required>
                     <label>Mot de passe</label>
                 </div>
-                <button type="submit"><i class='bx bx-log-in'></i> Log In</button>
+                <button type="submit">
+                    <img src="../assets/img/check.svg" alt="login icon" />
+                    Se Connecter
+                </button>
                 <div class="register">
                     <p>Besoin d'un compte ? <a href="register.php">Contacter un Admin</a></p>
                 </div>

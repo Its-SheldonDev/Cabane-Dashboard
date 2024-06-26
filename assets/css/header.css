@@ -46,6 +46,7 @@ nav ul li.right {
     display: flex;
     align-items: center;
     margin-left: auto;
+    padding-right: 20px; /* Ajouter du padding à droite */
 }
 
 nav ul li a {
@@ -53,112 +54,19 @@ nav ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
+    font-size: 1.2em; /* Taille du texte ajustée pour correspondre au logo */
 }
 
 nav ul li a i {
-    margin-right: 5px;
+    font-size: 1.5em; /* Taille des icônes ajustée */
+    margin-right: 15px; /* Espacement entre l'icône et le texte */
 }
 
 nav ul li.right a {
-    margin-left: 20px; /* Espacement entre les boutons à droite */
+    margin-left: 40px; /* Espacement entre les éléments de droite augmenté */
 }
 
 .container {
     padding: 20px;
     text-align: center;
-}
-
-#dayChart, #monthChart {
-    max-width: 100%;
-    margin: 20px auto;
-}
-
-@media (min-width: 768px) {
-    #dayChart, #monthChart {
-        max-width: 80%;
-    }
-}
-
-@media (min-width: 1200px) {
-    #dayChart, #monthChart {
-        max-width: 60%;
-    }
-}
-
-.login-form, .register-form {
-    max-width: 300px;
-    margin: 50px auto;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 1em;
-    background-color: #1c1e29;
-}
-
-.login-form h2, .register-form h2 {
-    text-align: center;
-}
-
-.login-form input, .register-form input {
-    width: 100%;
-    padding: 0.5em;
-    margin: 0.5em 0;
-}
-
-.login-form button, .register-form button {
-    width: 100%;
-    padding: 0.5em;
-}
-
-.stats-container {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-}
-
-.stats-container table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1em;
-    color: white;
-}
-
-.stats-container table, .stats-container th, .stats-container td {
-    border: 1px solid #ddd;
-}
-
-.stats-container th, .stats-container td {
-    padding: 8px;
-    text-align: left;
-}
-
-.stats-container th {
-    background-color: #f2f2f2;
-    color: black;
-}
-
-/* Styles responsives */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li.right {
-        margin-left: 0;
-    }
-
-    header {
-        padding: 1em;
-    }
-
-    .login-form, .register-form {
-        margin: 20px auto;
-    }
-
-    .stats-container {
-        margin: 20px auto;
-    }
 }
