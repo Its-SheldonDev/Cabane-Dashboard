@@ -32,7 +32,7 @@ foreach ($stats['monthStats'] as $stat) {
 </head>
 <body>
 <div class="container">
-    <h2>Scans Graphs</h2>
+    <h2>Scan Graphs</h2>
     <div id="dayChart"></div>
     <div id="monthChart"></div>
 </div>
