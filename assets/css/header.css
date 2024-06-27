@@ -1,23 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #12141c;
     color: white;
     margin: 0;
-    padding-top: 90px; /* Espace pour éviter de chevaucher la navbar fixe */
+    padding-top: 90px;
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.5); /* Couleur de fond avec opacité */
-    backdrop-filter: blur(10px); /* Effet de flou */
-    border-radius: 10px; /* Coins arrondis */
-    padding: 1.5em; /* Agrandir légèrement la navbar */
+    background-color: rgba(51, 51, 51, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1.5em;
     text-align: center;
-    margin: 0.5em; /* Marges pour éviter de toucher les bords de l'écran */
-    position: fixed; /* Fixer la navbar en haut */
-    top: 0; /* Aligner en haut */
+    margin: 0.5em;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Assurez-vous que la navbar est au-dessus des autres éléments */
+    z-index: 1000;
     box-sizing: border-box;
 }
 
@@ -28,7 +30,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permettre le wrap pour les petits écrans */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -40,15 +42,15 @@ nav ul li.logo {
 }
 
 nav ul li.logo img {
-    max-height: 50px; /* Redimensionner le logo */
+    max-height: 50px;
 }
 
 nav ul li.right {
     display: flex;
-    flex-direction: row; /* Aligner les éléments horizontalement par défaut */
+    flex-direction: row;
     align-items: center;
     margin-left: auto;
-    padding-right: 20px; /* Ajouter du padding à droite */
+    padding-right: 20px;
 }
 
 nav ul li a {
@@ -56,47 +58,46 @@ nav ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 1.2em; /* Taille du texte ajustée pour correspondre au logo */
+    font-size: 1.2em;
 }
 
 nav ul li a img.icon {
     width: 24px;
     height: 24px;
-    margin-right: 15px; /* Espacement entre l'icône et le texte */
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%); /* Appliquer une couleur blanche à l'icône */
+    margin-right: 15px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 nav ul li.right a {
-    margin-left: 40px; /* Espacement entre les éléments de droite augmenté */
+    margin-left: 40px;
 }
 
-/* Styles responsives */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Disposer les éléments en colonne sur petits écrans */
-        align-items: center; /* Centrer les éléments */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li.logo {
-        align-self: center; /* Centrer le logo */
+        align-self: center;
     }
 
     nav ul li.right {
-        flex-direction: row; /* Aligner les éléments en colonne */
-        align-items: center; /* Centrer les éléments */
-        padding-right: 0; /* Enlever le padding à droite */
-        width: 100%; /* Prendre toute la largeur */
+        flex-direction: row;
+        align-items: center;
+        padding-right: 0;
+        width: 100%;
     }
 
     nav ul li.right a {
-        margin-left: 0; /* Enlever l'espacement entre les éléments de droite */
-        margin-bottom: 10px; /* Ajouter un espacement en bas pour séparer les éléments */
-        width: 100%; /* Prendre toute la largeur */
-        text-align: center; /* Centrer le texte */
-        margin-top: 20px; /* Ajouter de l'espace au-dessus des boutons */
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
     }
 
     header {
-        padding: 1em; /* Réduire le padding pour les petits écrans */
+        padding: 1em;
     }
 }

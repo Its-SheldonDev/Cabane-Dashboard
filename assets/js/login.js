@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         const formData = $(this).serialize();
-        console.log("Form data: ", formData); // Log the form data
+        console.log("Form data: ", formData);
 
         $.ajax({
             url: 'login.php',
@@ -11,7 +11,7 @@ $(document).ready(function() {
             data: formData,
             dataType: 'json',
             success: function(response) {
-                console.log("Response: ", response); // Log the response
+                console.log("Response: ", response);
                 if (response.status === 'success') {
                     toastr.success(response.message, '', {
                         positionClass: 'toast-bottom-right',
@@ -28,7 +28,7 @@ $(document).ready(function() {
                 }
             },
             error: function(xhr, status, error) {
-                console.log("AJAX error: ", status, error); // Log the AJAX error details
+                console.log("AJAX error: ", status, error);
                 toastr.error('Une erreur est survenue lors de la tentative de connexion.', '', {
                     positionClass: 'toast-bottom-right',
                     timeOut: 3000

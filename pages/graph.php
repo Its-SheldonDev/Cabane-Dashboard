@@ -6,7 +6,6 @@ include '../includes/loader.php';
 
 redirectIfNotLoggedIn();
 
-// Fetch the aggregated statistics data from the API
 $stats = getStatsData($apiUrl);
 
 $dayData = [];

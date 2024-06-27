@@ -8,7 +8,6 @@ redirectIfNotLoggedIn();
 
 $response = callApi('/scans');
 
-// Filtrer les scans pour n'afficher que ceux de la journée
 $scans = array_filter($response['scans'], function($scan) {
     $scanDate = new DateTime($scan['date']);
     $today = new DateTime();

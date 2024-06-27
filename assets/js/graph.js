@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chartMonth.render();
 
     toastr.options = {
-        "positionClass": "toast-bottom-right", // Position de la notification
-        "timeOut": "3000"
+        "positionClass": "toast-bottom-right",
+        "timeOut": "2000"
     };
     toastr.success('Graphiques chargés', 'Succès');
 });

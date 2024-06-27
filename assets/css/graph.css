@@ -3,8 +3,8 @@ body {
     background-color: #12141c;
     color: white;
     margin: 0;
-    padding-top: 90px; /* Ajouter un espacement en haut pour éviter que le contenu soit caché par le header */
-    overflow-y: auto; /* Permettre le défilement vertical */
+    padding-top: 90px;
+    overflow-y: auto;
 }
 
 .container {

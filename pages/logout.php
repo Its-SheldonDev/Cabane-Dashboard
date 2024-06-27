@@ -10,7 +10,6 @@ session_destroy();
     <title>Déconnexion | QR Cabane</title>
     <link rel="icon" href="../assets/img/fav.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/logout.css">
 </head>
 <body>
