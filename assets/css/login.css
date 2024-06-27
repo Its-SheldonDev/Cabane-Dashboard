@@ -109,27 +109,16 @@ button {
     font-size: 16px;
     border: 2px solid transparent;
     transition: 0.3s ease;
-    display: flex; /* Utilisation de Flexbox */
-    justify-content: center;
+    display: flex;
     align-items: center;
-    gap: 10px; /* Espacement entre l'icône et le texte */
+    justify-content: center;
+    gap: 10px;
 }
 
 button:hover {
     color: #fff;
     border-color: #fff;
     background: rgba(255, 255, 255, 0.15);
-}
-
-button img {
-    width: 24px;
-    height: 24px;
-    filter: invert(0); /* Couleur par défaut */
-    transition: filter 0.3s ease;
-}
-
-button:hover img {
-    filter: invert(1); /* Changer la couleur en blanc au survol */
 }
 
 .register {

@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #12141c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.notification {
+    background-color: #1c1e29;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.notification h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.notification p {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}

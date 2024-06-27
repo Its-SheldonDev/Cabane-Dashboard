@@ -3,7 +3,7 @@ include 'config.php';
 include 'functions.php';
 
 if (!isLoggedIn() && basename($_SERVER['PHP_SELF']) != 'login.php' && basename($_SERVER['PHP_SELF']) != 'register.php') {
-    header('Location: login.php');
+    header('Location: pages/login.php');
     exit();
 }
 ?>
