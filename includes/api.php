@@ -1,5 +1,5 @@
 <?php
-$apiUrl = 'https://api.lacabane-parias.fr/api';
+$apiUrl = '45.13.119.88:3000/api';
 $baseUrl = 'https://dash.lacabane-parias.fr/';
 
 if (!function_exists('callApi')) {
