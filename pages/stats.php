@@ -1,6 +1,9 @@
 <?php
 include '../includes/header.php';
 include '../includes/loader.php';
+include '../includes/auth.php';
+include '../includes/api.php';
+
 redirectIfNotLoggedIn();
 
 $response = callApi('/scans');

@@ -1,7 +1,6 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+$apiUrl = 'https://api.lacabane-parias.fr/api';
+$baseUrl = 'https://dash.lacabane-parias.fr/';
 
 if (!function_exists('callApi')) {
     function callApi($endpoint, $method = 'GET', $data = null) {
@@ -25,19 +24,10 @@ if (!function_exists('callApi')) {
     }
 }
 
-if (!function_exists('isLoggedIn')) {
-    function isLoggedIn() {
-        return isset($_SESSION['user']);
-    }
-}
-
-if (!function_exists('redirectIfNotLoggedIn')) {
-    function redirectIfNotLoggedIn() {
-        global $baseUrl;
-        if (!isLoggedIn()) {
-            header('Location: ' . $baseUrl . 'pages/login.php');
-            exit();
-        }
+if (!function_exists('getStatsData')) {
+    function getStatsData($apiUrl) {
+        $statsData = file_get_contents("$apiUrl/stats");
+        return json_decode($statsData, true);
     }
 }
 ?>

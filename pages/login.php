@@ -1,6 +1,7 @@
 <?php
-include '../includes/header.php';
 include '../includes/loader.php';
+include '../includes/auth.php';
+include '../includes/api.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];

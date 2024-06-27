@@ -1,4 +1,5 @@
 <?php
+include 'includes/auth.php';
 include 'includes/header.php';
 include 'includes/loader.php';
 
@@ -11,20 +12,3 @@ if (isLoggedIn()) {
     exit();
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Cabane Dashboard</title>
-    <link rel="icon" href="../assets/img/fav.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to QR Cabane Dashboard</h1>
-        <p>Please <a href="pages/login.php">login</a> to access the dashboard.</p>
-    </div>
-</body>
-</html>
