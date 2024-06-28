@@ -86,7 +86,7 @@ nav ul li.right a {
         flex-direction: row;
         align-items: center;
         padding-right: 0;
-        width: 100%;
+        width: 90%;
     }
 
     nav ul li.right a {
@@ -99,5 +99,9 @@ nav ul li.right a {
 
     header {
         padding: 1em;
+    }
+
+    nav ul li.right a[href="https://linktr.ee/cabane.parias"] {
+        display: none;
     }
 }
