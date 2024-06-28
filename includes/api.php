@@ -1,5 +1,5 @@
 <?php
-$apiUrl = '45.13.119.88:3000/api';
+$apiUrl = 'http://45.13.119.88:3000/api';
 $baseUrl = 'https://dash.lacabane-parias.fr/';
 
 if (!function_exists('callApi')) {
@@ -26,8 +26,29 @@ if (!function_exists('callApi')) {
 
 if (!function_exists('getStatsData')) {
     function getStatsData($apiUrl) {
-        $statsData = file_get_contents("$apiUrl/stats");
-        return json_decode($statsData, true);
+        $url = "$apiUrl/stats";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+
+        $result = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if (curl_errno($ch)) {
+            error_log("cURL error: " . curl_error($ch));
+            curl_close($ch);
+            return null;
+        }
+
+        if ($httpCode !== 200) {
+            error_log("HTTP status code: " . $httpCode);
+            curl_close($ch);
+            return null;
+        }
+
+        curl_close($ch);
+        return json_decode($result, true);
     }
 }
 ?>

@@ -8,15 +8,24 @@ redirectIfNotLoggedIn();
 
 $stats = getStatsData($apiUrl);
 
+if ($stats === null) {
+    echo "Failed to retrieve data from the API.";
+    exit;
+}
+
 $dayData = [];
 $monthData = [];
 
-foreach ($stats['dayStats'] as $stat) {
-    $dayData[$stat['_id']] = $stat['count'];
+if (isset($stats['dayStats'])) {
+    foreach ($stats['dayStats'] as $stat) {
+        $dayData[$stat['_id']] = $stat['count'];
+    }
 }
 
-foreach ($stats['monthStats'] as $stat) {
-    $monthData[$stat['_id']] = $stat['count'];
+if (isset($stats['monthStats'])) {
+    foreach ($stats['monthStats'] as $stat) {
+        $monthData[$stat['_id']] = $stat['count'];
+    }
 }
 ?>
 <!DOCTYPE html>
